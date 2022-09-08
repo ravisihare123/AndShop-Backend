@@ -7,6 +7,7 @@ require("dotenv").config();
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+var mailerRouter = require("./routes/mail");
 
 var app = express();
 
@@ -19,5 +20,6 @@ app.use(cors());
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.use("/mail", mailerRouter);
 
 module.exports = app;
